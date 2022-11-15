@@ -25,6 +25,10 @@ function Intercom({ match, location }) {
   
   }, [])
 
+  if (loaded){
+    document.querySelector(".intercom-launcher-frame").contentWindow.document.body.style.display='none'
+  }
+
   return (
     <>
     {/* {loaded &&
