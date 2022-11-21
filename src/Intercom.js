@@ -54,12 +54,13 @@ function Intercom() {
         ();
 
   const [loaded , setLoaded] = useState(false)
-  const [onMessage, isOnMessage] = useState(false)
+
+  // document.querySelectorAll(..intercom-lightweight-app-launcher).click()
+
   // onMount disable the cancel button
   useEffect(() => {
     const trigger = () => {
       var divs = document.querySelectorAll('.intercom-app');
-
       [].forEach.call(divs, function(div) {
 
         let main = div.querySelector('div')
@@ -67,19 +68,16 @@ function Intercom() {
         if (load){
           setLoaded(true)
         }
-
-        // if (loaded){
-        //   alert('i am loaded')
-        // }
-        // console.log(main.querySelectorAll('iframe')[0].contentWindow.document.readyState === 'complete')
         if (loaded){
+          let open = document.querySelector('.e4nbtsn1')
+
+          open.click()
+
           main.querySelectorAll('iframe').forEach( item =>{
             item.contentWindow.document.body.querySelector('.intercom-tl33nz').style.display = 'none' 
             item.contentWindow.document.body.querySelector('.intercom-5codpm').style.display = 'none' 
             item.contentWindow.document.body.querySelector('.intercom-esv00ou0').style.display = 'none' 
  
-
-
           }
         ) 
         }
@@ -93,44 +91,6 @@ function Intercom() {
 
     }, 50);
   }, [loaded])
-
-
-
-  
-
-//   if (loaded){
-//     // document.querySelector(".intercom-launcher-frame").contentWindow.document.body.style.display='none'
-//     // document.querySelector(".intercom-5codpm").contentWindow.document.body.style.display='none'
-//     // console.log(document.getElementsByClassName("intercom-messenger"))
-//     var divs = document.querySelectorAll('.intercom-app');
-
-// [].forEach.call(divs, function(div) {
-//   // do whatever
-//   div.style.color = "red";
-
-//   let main = div.querySelector('div')
-//   console.log(main.querySelectorAll('iframe')[0].contentWindow.document.readyState === 'complete')
-
-//   main.querySelectorAll('iframe').forEach( item =>
-//     item.contentWindow.document.body.querySelector('.intercom-tl33nz').onclick = function() { 
-//       alert('bla bla'); 
-//   }
-// )
-
-// });
-//   //   document.querySelector('.intercom-app').forEach( item =>
-//   //     console.log(item)
-//   // )
-
-//   }
-
-  return (
-    <>
-    {/* {loaded &&
-        <Delay />
-    } */}
-    </>
-  )
 
 
 }
