@@ -71,8 +71,6 @@ function Intercom() {
         if (loaded){
           let open = document.querySelector('.e4nbtsn1')
 
-          open.click()
-
           main.querySelectorAll('iframe').forEach( item =>{
             item.contentWindow.document.body.querySelector('.intercom-tl33nz').style.display = 'none' 
             item.contentWindow.document.body.querySelector('.intercom-5codpm').style.display = 'none' 
@@ -80,7 +78,10 @@ function Intercom() {
  
           }
         ) 
+        open.click()
+
         }
+        
 
       });
     }
