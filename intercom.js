@@ -96,7 +96,7 @@ let email = data[1].slice(6, x)
 
     Intercom('onUnreadCountChange', function(unreadCount) {
       count++ ;
-      alert(count);
+      // alert(count);
     });
 
     function getData(){
