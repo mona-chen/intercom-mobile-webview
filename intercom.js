@@ -100,7 +100,7 @@ let email = data[1].slice(6, x)
     });
 
     function getData(){
-      return count;
+      return count.toString();
     }
     Intercom('show');
 
