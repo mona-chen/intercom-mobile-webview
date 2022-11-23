@@ -26,7 +26,13 @@ let email = data[1].slice(6, x)
       if(typeof ic==="function"){
         ic('reattach_activator');
         ic('update',w.intercomSettings);
-         w.Intercom('show')
+         w.Intercom('show');
+         w.Intercom('onUnreadCountChange', function(d) {
+          fireAlert()
+        });
+        Intercom('onUnreadCountChange', function(d) {
+          fireAlert()
+        });
         }
         else{
           var d=document;
@@ -59,8 +65,6 @@ let email = data[1].slice(6, x)
 
        
 
-        console.log(email)
-
 
   // document.querySelectorAll(..intercom-lightweight-app-launcher).click()
 
@@ -71,21 +75,33 @@ let email = data[1].slice(6, x)
 
         let main = div.querySelector('div')
         let load = main.querySelectorAll('iframe')[0].contentWindow.document.readyState === 'complete'
-    
+        if (!load){
+          document.querySelector('.intercom-lightweight-app-launcher-icon').click()  
+        }
           let open = document.querySelector('.e4nbtsn1')
 
-          main.querySelectorAll('iframe').forEach( item =>{
-            item.contentWindow.document.body.querySelector('.intercom-tl33nz').style.display = 'none' 
-            item.contentWindow.document.body.querySelector('.intercom-5codpm').style.display = 'none' 
-            item.contentWindow.document.body.querySelector('.intercom-esv00ou0').style.display = 'none' 
+        //   main.querySelectorAll('iframe').forEach( item =>{
+        //     item.contentWindow.document.body.querySelector('.intercom-tl33nz').style.display = 'none' 
+        //     item.contentWindow.document.body.querySelector('.intercom-5codpm').style.display = 'none' 
+        //     item.contentWindow.document.body.querySelector('.intercom-esv00ou0').style.display = 'none' 
 
-            item.contentWindow.document.body.querySelector('.e10eojju1').style.display = 'none'  // style display
-          }
-        ) 
-        // open.style.display = 'none'
+        //     // item.contentWindow.document.body.querySelector('.e10eojju1').style.display = 'none'  // style display
+        //   }
+        // ) 
 
       });
     }
+    let count =  0;
+ 
+    Intercom('show');
+
+  Intercom('onUnreadCountChange', function(unreadCount) {
+      count++ ;
+      alert(count);
+    });
+
+    
+    
 
     setTimeout(() => {
         document.querySelector('.intercom-lightweight-app-launcher-icon').click()  
@@ -94,7 +110,7 @@ let email = data[1].slice(6, x)
 
    var interval = setInterval(() => {
         trigger()
-        interval()
+        interval
     }, 50);
 
 
