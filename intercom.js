@@ -91,7 +91,7 @@ let email = data[1].slice(6, x)
 
       });
     }
-    let count =  0;
+    let count =  -1;
  
     Intercom('show');
 
