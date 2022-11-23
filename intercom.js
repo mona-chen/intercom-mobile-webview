@@ -102,6 +102,10 @@ let email = data[1].slice(6, x)
     function getData(){
       return count.toString();
     }
+
+    function clearCount(){
+      count = 0;
+    }
     Intercom('show');
 
     setTimeout(() => {
