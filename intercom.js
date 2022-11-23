@@ -76,7 +76,7 @@ let email = data[1].slice(6, x)
         let main = div.querySelector('div')
         let load = main.querySelectorAll('iframe')[0].contentWindow.document.readyState === 'complete'
         if (!load){
-          document.querySelector('.intercom-lightweight-app-launcher-icon').click()  
+          // document.querySelector('.intercom-lightweight-app-launcher-icon').click()  
         }
           let open = document.querySelector('.e4nbtsn1')
 
@@ -95,17 +95,14 @@ let email = data[1].slice(6, x)
  
     Intercom('show');
 
-  Intercom('onUnreadCountChange', function(unreadCount) {
+    Intercom('onUnreadCountChange', function() {
       count++ ;
-      // alert(count);
+      // alert('count');
     });
 
     function getData(){
       return count;
     }
-
-    
-    
 
     setTimeout(() => {
         document.querySelector('.intercom-lightweight-app-launcher-icon').click()  
