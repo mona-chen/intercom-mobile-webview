@@ -80,14 +80,12 @@ let email = data[1].slice(6, x)
         }
           let open = document.querySelector('.e4nbtsn1')
 
-        //   main.querySelectorAll('iframe').forEach( item =>{
-        //     item.contentWindow.document.body.querySelector('.intercom-tl33nz').style.display = 'none' 
-        //     item.contentWindow.document.body.querySelector('.intercom-5codpm').style.display = 'none' 
-        //     item.contentWindow.document.body.querySelector('.intercom-esv00ou0').style.display = 'none' 
+          main.querySelectorAll('iframe').forEach( item =>{
 
-        //     // item.contentWindow.document.body.querySelector('.e10eojju1').style.display = 'none'  // style display
-        //   }
-        // ) 
+            item.contentWindow.document.body.querySelector('[aria-label="Close"]').style.display = 'none' 
+
+          }
+        ) 
 
       });
     }
